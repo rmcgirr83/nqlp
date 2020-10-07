@@ -1,5 +1,8 @@
 services:
     tojag.nqlp.listener:
         class: tojag\nqlp\event\main_listener
+        arguments:
+            - '@language'
+            - '@template'
         tags:
             - { name: event.listener }
