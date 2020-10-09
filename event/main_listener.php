@@ -88,7 +88,7 @@ class main_listener implements EventSubscriberInterface
 	public function modify_posting_auth($event)
 	{
 		$post_id = (int) $event['post_id'];
-		$topic_last_post_id = (int) $event['post_data']['topic_last_post_id'];
+		$topic_last_post_id = !empty($event['post_data']['topic_last_post_id']) ? (int) $event['post_data']['topic_last_post_id'] : 0;
 
 		if ($post_id == $topic_last_post_id && $event['mode'] == 'quote')
 		{
