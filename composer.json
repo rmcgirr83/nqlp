@@ -2,11 +2,11 @@
     "name": "tojag/nqlp",
     "type": "phpbb-extension",
     "description": "No quote last post",
-    "version": "1.0.0",
-    "time": "2020-10-07",
+    "version": "1.0.1",
+    "time": "2020-12-06",
     "license": "GPL-2.0-only",
     "authors": [
-       {
+        {
             "name": "RMcGirr83",
             "role": "Developer"
         },
@@ -24,6 +24,12 @@
         "display-name": "No quote last post",
         "soft-require": {
             "phpbb/phpbb": ">=3.3.0"
+        },
+        "version-check": {
+            "host": "www.phpbb.com",
+            "directory": "/customise/db/extension/no_quote_last_post",
+            "filename": "version_check",
+            "ssl": true
         }
     }
 }

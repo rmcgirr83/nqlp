@@ -48,7 +48,8 @@ class main_listener implements EventSubscriberInterface
 		return array(
 			'core.acp_extensions_run_action_after'	=>	'acp_extensions_run_action_after',
 			'core.viewtopic_modify_post_row'	=> 'viewtopic_modify_post_row',
-			'core.modify_posting_auth'			=> 'modify_posting_auth'
+			'core.modify_posting_auth'			=> 'modify_posting_auth',
+			'core.topic_review_modify_row'		=> 'topic_review_modify_row',
 		);
 	}
 
@@ -95,5 +96,21 @@ class main_listener implements EventSubscriberInterface
 			$this->language->add_lang('common', 'tojag/nqlp');
 			trigger_error($this->language->lang('CANNOT_QUOTE_LAST_POST'));
 		}
+	}
+
+	/**
+	 * Don't allow quoting of last post in topic review
+	 */
+	public function topic_review_modify_row($event)
+	{
+		$last_post_id = $event['current_row_number'];
+		$post_row = $event['post_row'];
+
+		if ($last_post_id == 0)
+		{
+			$post_row['POSTER_QUOTE'] = false;
+		}
+
+		$event['post_row'] = $post_row;
 	}
 }
