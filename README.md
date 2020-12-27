@@ -2,6 +2,8 @@
 
 phpBB extension that will not allow the quoting of the last post in a topic.
 
+[![Build Status](https://github.com/rmcgirr83/nqlp/workflows/Tests/badge.svg)](https://github.com/rmcgirr83/nqlp/actions)
+
 ## Installation
 
 ### 1. clone
