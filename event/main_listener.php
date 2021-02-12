@@ -2,7 +2,7 @@
 /**
  *
  * No quote last post. An extension for the phpBB Forum Software package.
- * @copuright (c) 2020, RMcgirr83
+ * @copyright (c) 2020, RMcgirr83
  * @copyright (c) 2019, tojag
  * @license GNU General Public License, version 2 (GPL-2.0)
  *
@@ -23,20 +23,20 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class main_listener implements EventSubscriberInterface
 {
-	/** @var \phpbb\language\language */
+	/** @var language $language */
 	protected $language;
 
-	/** @var \phpbb\template\template */
+	/** @var template $template */
 	protected $template;
 
 	/**
-	* Constructor
-	*
-	* @param \phpbb\language\language 	$language	Language object
-	* @param \phpbb\template\template 	$template	Template object
-	* @return \tojag\nqlp\event\main_listener
-	* @access public
-	*/
+	 * Constructor
+	 *
+	 * @param language 	$language	Language object
+	 * @param template 	$template	Template object
+	 * @return \tojag\nqlp\event\main_listener
+	 * @access public
+	 */
 	public function __construct(language $language, template $template)
 	{
 		$this->language = $language;
@@ -53,12 +53,12 @@ class main_listener implements EventSubscriberInterface
 		);
 	}
 
-	/* Display additional metadate in extension details
-	*
-	* @param $event			event object
-	* @param return null
-	* @access public
-	*/
+	/** Display additional metadata in extension details
+	 *
+	 * @param $event			event object
+	 * @param return null
+	 * @access public
+	 */
 	public function acp_extensions_run_action_after($event)
 	{
 		if ($event['ext_name'] == 'tojag/nqlp' && $event['action'] == 'details')
