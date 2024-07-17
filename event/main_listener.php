@@ -23,10 +23,10 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
  */
 class main_listener implements EventSubscriberInterface
 {
-	/** @var language $language */
+	/** @var $language */
 	protected $language;
 
-	/** @var template $template */
+	/** @var $template */
 	protected $template;
 
 	/**

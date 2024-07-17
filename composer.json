@@ -2,8 +2,8 @@
     "name": "tojag/nqlp",
     "type": "phpbb-extension",
     "description": "No quote last post",
-    "version": "1.0.1",
-    "time": "2020-12-06",
+    "version": "1.0.2",
+    "time": "2024-07-17",
     "license": "GPL-2.0-only",
     "authors": [
         {
@@ -15,15 +15,15 @@
             "role": "Previous author"
         }
     ],
-    "require": {
-        "php": ">=7.1",
-        "phpbb/phpbb": ">=3.3.0",
+	"require": {
+        "php": ">=7.4",
+        "phpbb/phpbb": ">=3.3",
         "composer/installers": "~1.0"
-    },
+	},
     "extra": {
         "display-name": "No quote last post",
         "soft-require": {
-            "phpbb/phpbb": ">=3.3.0"
+            "phpbb/phpbb": ">=3.3"
         },
         "version-check": {
             "host": "www.phpbb.com",
